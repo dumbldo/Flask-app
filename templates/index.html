@@ -16,11 +16,6 @@
     <div id="imageContainer">
         <button onclick="document.getElementById('fileInput').click();">📸</button>
     </div>
-
-    <div id="resultContainer" class="result-container" style="display: none">
-        <!-- The result will be displayed here -->
-    </div>
-
     <!-- New buttons for delete and retake functionality -->
     <div id="imageActions" style="display: none;">
         <button class="button" id="deleteButton">Delete</button>
@@ -30,11 +25,11 @@
     <input type="file" accept="image/*" capture="camera" id="fileInput" style="display:none;">
 
     <div>
-        <a href="whodrinks.html"><button class="button red">Qui bois quoi?</button></a>
+        <button class="button red" id="whodrinksButton">Qui bois quoi?</button>
         <button class="button purple" onclick="alert('Not implemented')">Qui met sa tournée?</button>
-        <button class="button blue" id="surpriseButton">Surprise</button>
+        <button class="button blue">Surprise</button>
     </div>
-    
+
 
 </div>
 </body>

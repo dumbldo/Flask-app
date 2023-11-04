@@ -40,31 +40,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var surpriseButton = document.getElementById('surpriseButton');
+    var whodrinksButton = document.getElementById('whodrinksButton');
     var imageContainer = document.getElementById('imageContainer');
-    var resultContainer = document.getElementById('resultContainer');
 
-    surpriseButton.addEventListener('click', function() {
+    whodrinksButton.addEventListener('click', function() {
         var formData = new FormData();
         var imageFile = document.querySelector('#fileInput').files[0];
         formData.append('image', imageFile);
 
-        fetch('https://pascalsq.pythonanywhere.com/classify', { // Make sure to use your actual server address
+        fetch('https://pascalsq.pythonanywhere.com/classify', {
             method: 'POST',
             body: formData
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
-                // Construct a string that displays the emotion and the corresponding scores
-                var resultText = `Emotion: ${data.emotion}\n`;
-                resultContainer.textContent = resultText;
-                resultContainer.style.display = 'block';
+                // Save the data to local storage
+                localStorage.setItem('imageResults', JSON.stringify(data));
+                // Redirect to the whodrinks.html page
+                window.location.href = 'whodrinks.html';
             })
             .catch((error) => {
                 console.error('Error:', error);
-                resultContainer.textContent = 'An error occurred while processing the image.';
+                imageContainer.textContent = 'An error occurred while processing the image.';
             });
     });
 });
+
 
