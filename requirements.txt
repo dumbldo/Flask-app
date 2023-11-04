@@ -1,0 +1,10 @@
+huggingface-hub==0.17.3
+numpy==1.26.1
+pandas==2.1.1
+tensorboard==2.14.1
+tensorboard-data-server==0.7.2
+tensorflow==2.14.0
+tensorflow-estimator==2.14.0
+tensorflow-io-gcs-filesystem==0.34.0
+transformers==4.35.0
+Pillow
