@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var imageFile = document.querySelector('#fileInput').files[0];
         formData.append('image', imageFile);
 
-        fetch('http://pascalsq.pythonanywhere.com/classify', { // Make sure to use your actual server address
+        fetch('https://pascalsq.pythonanywhere.com/classify', { // Make sure to use your actual server address
             method: 'POST',
             body: formData
         })

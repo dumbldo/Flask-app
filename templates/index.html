@@ -40,7 +40,7 @@
             var imageFile = document.querySelector('#fileInput').files[0];
             formData.append('image', imageFile);
 
-            fetch('http://pascalsq.pythonanywhere.com/classify', {
+            fetch('https://pascalsq.pythonanywhere.com/classify', {
                 method: 'POST',
                 body: formData
             })
@@ -58,7 +58,7 @@
                 });
 
 
-            fetch('http://pascalsq.pythonanywhere.com/classify', {
+            fetch('https://pascalsq.pythonanywhere.com/classify', {
                 method: 'POST',
                 body: formData
             })
