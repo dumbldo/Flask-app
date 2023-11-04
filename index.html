@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qui?!</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </head>
@@ -26,10 +26,16 @@
     <input type="file" accept="image/*" capture="camera" id="fileInput" style="display:none;">
 
     <div>
-        <button class="button red" onclick="alert('Not implemented')">Qui bois quoi?</button>
+        <a href="whodrinks.html"><button class="button red">Qui bois quoi?</button></a>
         <button class="button purple" onclick="alert('Not implemented')">Qui met sa tournée?</button>
         <button class="button blue" onclick="alert('Not implemented')">Surprise</button>
     </div>
+</div>
+
+<!-- This is the container for the loading screen -->
+<div id="loadingScreen" class="loading-screen" style="display: none;">
+    <div id="emoji"></div>
+    <p id="loadingText">Je réfléchis...</p>
 </div>
 
 
