@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui?!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Qui?!</h1>
+    <p>Prenez une photo de votre groupe et choisissez une action!</p>
+
+    <div id="imageContainer">
+        <button onclick="document.getElementById('fileInput').click();">📸</button>
+    </div>
+
+    <!-- New buttons for delete and retake functionality -->
+    <div id="imageActions" style="display: none;">
+        <button class="button" id="deleteButton">Delete</button>
+        <button class="button" id="retakeButton">Retake</button>
+    </div>
+
+    <input type="file" accept="image/*" capture="camera" id="fileInput" style="display:none;">
+
+    <div>
+        <button class="button red" onclick="alert('Not implemented')">Qui bois quoi?</button>
+        <button class="button purple" onclick="alert('Not implemented')">Qui met sa tournée?</button>
+        <button class="button blue" onclick="alert('Not implemented')">Surprise</button>
+    </div>
+</div>
+
+
+</body>
+</html>
