@@ -1,8 +1,10 @@
-
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 from PIL import Image
+import numpy as np
 from transformers import pipeline
 from io import BytesIO
+from hsemotion_onnx.facial_emotions import HSEmotionRecognizer
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
@@ -15,8 +17,8 @@ def surprise():
     return render_template('whodrinks.html')
 
 
-model_name = "openai/clip-vit-large-patch14"
-classifier = pipeline("zero-shot-image-classification", model=model_name)
+model_name = 'enet_b0_8_best_afew'
+emotionAnalyser = HSEmotionRecognizer(model_name=model_name)
 
 @app.route('/classify', methods=['POST'])
 def classify_image():
@@ -25,7 +27,16 @@ def classify_image():
 
     file = request.files['image']
     image = Image.open(BytesIO(file.read())).convert("RGB")
-    labels_for_classification = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    result = classifier(images=image, candidate_labels=labels_for_classification)
+    image_np = np.array(image)
+    emotion, score = emotionAnalyser.predict_emotions(image_np , logits=False)
+    # Convert the numpy array to a regular list for JSON serialization
+    score_list = score.tolist()
 
-    return jsonify(result)
+    # Create a dictionary to hold your response data
+    response_data = {
+        'emotion': emotion,
+        'score': score_list
+    }
+
+    # Return the data as JSON
+    return jsonify(response_data), 200

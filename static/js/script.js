@@ -55,13 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
         })
             .then(response => response.json())
             .then(data => {
-                // Assuming data contains a field 'label' for the classification result
-                var label = data[0]?.label || 'Unknown'; // Fallback to 'Unknown' if label is not found
-                var score = data[0]?.score || 0; // Fallback to 0 if score is not found
-
-                // Display the classification result
+                console.log('Success:', data);
+                // Construct a string that displays the emotion and the corresponding scores
+                var resultText = `Emotion: ${data.emotion}\n`;
+                resultContainer.textContent = resultText;
                 resultContainer.style.display = 'block';
-                resultContainer.textContent = `Result: ${label} with confidence ${score.toFixed(2)}`;
             })
             .catch((error) => {
                 console.error('Error:', error);
