@@ -160,6 +160,7 @@ p {
     cursor: pointer; /* Pointer cursor on hover */
     outline: none; /* Remove focus outline */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+    color: #000000;
 }
 
 /* Flipping card */
@@ -201,5 +202,21 @@ p {
 
 .emoji {
     font-size: 4em;
+}
+
+
+/* Media settings mobile */
+
+@media only screen and (max-width: 767px) {
+    .container {
+        position: relative; /* Establishes a positioning context */
+        height: auto; /* Allow the natural flow of the document */
+        min-height: 100vh; /* Minimum height is the full viewport height */
+        padding-bottom: 20px;
+        margin-top: 0px;
+    }
+    body {
+        background-color: #000;
+    }
 }
 
