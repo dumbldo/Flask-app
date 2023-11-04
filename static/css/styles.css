@@ -123,6 +123,7 @@ p {
     padding: 20px;
     margin-bottom: 20px;
     min-height: 92.5px;
+    /* border: #FF006E 2px solid; */
 }
 
 .profile-pic {
@@ -220,3 +221,15 @@ p {
     }
 }
 
+
+/* Test surprise */
+.result-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #666; /* Or any other color you prefer */
+    color: white;
+    font-size: 2em; /* Large text for dominant result */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui?!</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../static/js/script.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Qui?!</h1>
+    <p>Prenez une photo de votre groupe et choisissez une action!</p>
+
+    <div id="imageContainer">
+        <button onclick="document.getElementById('fileInput').click();">📸</button>
+    </div>
+
+    <div id="resultContainer" class="result-container" style="display: none">
+        <!-- The result will be displayed here -->
+    </div>
+
+    <!-- New buttons for delete and retake functionality -->
+    <div id="imageActions" style="display: none;">
+        <button class="button" id="deleteButton">Delete</button>
+        <button class="button" id="retakeButton">Retake</button>
+    </div>
+
+    <input type="file" accept="image/*" capture="camera" id="fileInput" style="display:none;">
+
+    <div>
+        <a href="whodrinks.html"><button class="button red">Qui bois quoi?</button></a>
+        <button class="button purple" onclick="alert('Not implemented')">Qui met sa tournée?</button>
+        <button class="button blue" id="surpriseButton">Surprise</button>
+    </div>
+    <!--<script type="text/javascript">
+        document.getElementById('surpriseButton').addEventListener('click', function() {
+            var formData = new FormData();
+            var imageFile = document.querySelector('#fileInput').files[0];
+            formData.append('image', imageFile);
+
+            fetch('http://127.0.0.1:5001/classify', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Process and display the results
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+
+            fetch('http://127.0.0.1:5001/classify', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Display results on the page
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>-->
+
+</div>
+</body>
+</html>
